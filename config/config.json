@@ -1,6 +1,14 @@
 {
+    "whatToDo" : {
+        "rename" : false,
+        "rescale" : true
+    },
     "symbolAnimation" : {
         "original" : "example",
         "replace" : "replace"
+    },
+    "rescale" : {
+        "width" : 0,
+        "height" : 300
     }
 }
