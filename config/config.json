@@ -1,14 +1,21 @@
 {
     "whatToDo" : {
         "rename" : false,
-        "rescale" : true
+        "rescale" : false,
+        "crop" : true
     },
     "symbolAnimation" : {
-        "original" : "example",
-        "replace" : "replace"
+        "original" : "wreath",
+        "replace" : "compass"
     },
     "rescale" : {
         "width" : 0,
-        "height" : 300
+        "height" : 409
+    },
+    "crop" : {
+        "left" : 75,
+        "top" : 75,
+        "width" : 150,
+        "height" : 150
     }
 }

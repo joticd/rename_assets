@@ -1,6 +1,6 @@
 const fs = require('fs');
 const sharp = require('sharp');
-const {whatToDo, symbolAnimation, rescale} = require('./config/config.json');
+const {whatToDo, symbolAnimation, rescale, crop} = require('./config/config.json');
 
 const assetsPath = `${__dirname}/assets`;
 const files = fs.readdirSync(assetsPath);	
@@ -10,6 +10,9 @@ files.forEach(element =>{
         renameSymFun(element);
     }
     if(whatToDo.rescale){
+        rescaleSymFun(element);
+    }
+    if(whatToDo.crop){
         rescaleSymFun(element);
     }
 });
@@ -32,5 +35,18 @@ function rescaleSymFun (element){
         console.log(err);
     });
 }
+
+function rescaleSymFun (element){  
+    sharp(`${assetsPath}/${element}`)
+    .extract({ left: crop.left, top: crop.top, width: crop.width, height: crop.height })
+    .toBuffer()
+    .then( data => {
+        fs.writeFileSync(`${assetsPath}/${element}`, data);
+    })
+    .catch( err => {
+        console.log(err);
+    });
+}
+
 
 
