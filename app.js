@@ -13,7 +13,7 @@ files.forEach(element =>{
         rescaleSymFun(element);
     }
     if(whatToDo.crop){
-        rescaleSymFun(element);
+        cropSymFun(element);
     }
 });
 
@@ -36,7 +36,7 @@ function rescaleSymFun (element){
     });
 }
 
-function rescaleSymFun (element){  
+function cropSymFun (element){  
     sharp(`${assetsPath}/${element}`)
     .extract({ left: crop.left, top: crop.top, width: crop.width, height: crop.height })
     .toBuffer()

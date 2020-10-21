@@ -1,8 +1,8 @@
 {
     "whatToDo" : {
         "rename" : false,
-        "rescale" : false,
-        "crop" : true
+        "rescale" : true,
+        "crop" : false
     },
     "symbolAnimation" : {
         "original" : "wreath",
@@ -10,7 +10,7 @@
     },
     "rescale" : {
         "width" : 0,
-        "height" : 409
+        "height" : 270
     },
     "crop" : {
         "left" : 75,
